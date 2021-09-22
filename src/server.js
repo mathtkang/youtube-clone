@@ -8,12 +8,14 @@ import storyRouter from "./routers/storyRouter";
 
 const PORT = 4000;
 
+console.log(process.cwd());
 const app = express();
 const logger = morgan("dev");
-app.use(logger)
+app.set("view engine", "pug");
+app.use(logger);
 
 app.use("/", globalRouter);
-// app.use("/videos", videoRouter);
+app.use("/videos", videoRouter);
 app.use("/users", userRouter);
 
 app.use("/stories", storyRouter);
