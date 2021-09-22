@@ -11,6 +11,7 @@ export const home = (req, res) => res.send("global home");
 globalRouter.get("/", home);
 globalRouter.get("/join", join)
 globalRouter.get("/login", login);
+
 globalRouter.get("/trending", trending);
 globalRouter.get("/new", new_);
 
